@@ -1,0 +1,42 @@
+{
+  "name": "fittrac-server",
+  "version": "1.0.0",
+  "description": "fittrac",
+  "main": "server.js",
+  "dependencies": {
+    "async": "^1.5.0",
+    "bcrypt": "^0.8.5",
+    "body-parser": "^1.14.2",
+    "compression": "^1.6.0",
+    "express": "^4.13.3",
+    "express-session": "^1.13.0",
+    "glob": "^6.0.1",
+    "helmet": "^1.0.1",
+    "jwt-simple": "^0.4.0",
+    "kerberos": "0.0.17",
+    "mongodb": "^2.0.52",
+    "mongoose": "^4.3.3",
+    "mongoose-unique-validator": "^0.6.2",
+    "morgan": "^1.6.1",
+    "passport": "^0.3.2",
+    "passport-jwt": "^1.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xin-he/fittrac-server.git"
+  },
+  "keywords": [
+    "stuff"
+  ],
+  "author": "Xin He, Derek Hua, Brent Lewis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xin-he/fittrac-server/issues"
+  },
+  "homepage": "https://github.com/xin-he/fittrac-server#readme"
+}
