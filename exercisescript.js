@@ -33,9 +33,10 @@ var callback = function(response) {
   });
 }
 
+//calls fitness api and inserts documents into mongo
 //http.request("http://wger.de/api/v2/exercise.json/?limit=350", callback).end();
 
-//getting images and putting into mongo
+//getting images updates mongodb documents
 exercise.getExercises(function(err, exercises) {
   console.log(exercises);
   var finished = 0;

@@ -17,7 +17,8 @@ var NutritionSchema = mongoose.Schema({
   "sodium": {},
   "license": {},
   "language": {},
-  "user": {}
+  "user": {},
+  "image": {}
 });
 
 var Nutrition = module.exports = mongoose.model('Nutrition', NutritionSchema);
@@ -33,3 +34,11 @@ module.exports.getNutrition = function(params, callback, limit) {
 module.exports.getAllNutrition = function(params, callback, limit) {
   Nutrition.find(params, callback).limit(limit);
 };
+
+module.exports.updateNutrition = function(conditions, update, options, callback) {
+  Nutrition.findOneAndUpdate(conditions, update, options, callback);
+};
+
+module.exports.updateTest = function(a,b,c,d) {
+  console.log("test");
+}
