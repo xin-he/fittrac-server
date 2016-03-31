@@ -12,6 +12,7 @@ var config 	= require('./config/database');
 var signup 	= require('./routes/signup');
 var auth 		= require('./routes/authenticate');
 var users 	= require('./routes/users');
+var search  = require('./routes/search');
 
 var app = express();
 
@@ -50,6 +51,7 @@ app.use('/api/', index);
 app.use('/api/signup', signup)
 app.use('/api/auth', auth);
 app.use('/api/u', users);
+app.use('/api/search', search);
 
 app.listen(app.get('port'), function() {
   console.log('Express started! Running on port ' + app.get('port') + '. Press CTRL-C to terminate');
