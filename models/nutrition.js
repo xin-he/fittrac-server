@@ -27,9 +27,9 @@ module.exports.addNutrition = function(nutrition, callback) {
 };
 
 module.exports.getNutrition = function(params, callback, limit) {
-  Users.findOne(params, callback).limit(limit);
+  Nutrition.findOne(params, callback).limit(limit);
 };
 
 module.exports.getAllNutrition = function(params, callback, limit) {
-  Users.find(params, callback).limit(limit);
+  Nutrition.find(params, callback).limit(limit);
 };

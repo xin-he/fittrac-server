@@ -25,9 +25,13 @@ module.exports.addExercise = function(exercise, callback) {
 };
 
 module.exports.getExercise = function(params, callback, limit) {
-  Users.findOne(params, callback).limit(limit);
+  Exercise.findOne(params, callback).limit(limit);
 };
 
 module.exports.getExercises = function(params, callback, limit) {
   Exercise.find(params, callback).limit(limit);
+};
+
+module.exports.updateExercise = function(conditions, update, options, callback) {
+  Exercise.findOneAndUpdate(conditions, update, options, callback);
 };
