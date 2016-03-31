@@ -25,3 +25,11 @@ var Nutrition = module.exports = mongoose.model('Nutrition', NutritionSchema);
 module.exports.addNutrition = function(nutrition, callback) {
   Nutrition.create(nutrition, callback);
 };
+
+module.exports.getNutrition = function(params, callback, limit) {
+  Users.findOne(params, callback).limit(limit);
+};
+
+module.exports.getAllNutrition = function(params, callback, limit) {
+  Users.find(params, callback).limit(limit);
+};
