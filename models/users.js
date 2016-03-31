@@ -16,7 +16,13 @@ var userSchema = mongoose.Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  workouts: [],
+  nutrition: [],
+  trackableItems: [{
+    name: {},
+    history: []
+  }]
 });
 
 // Apply the uniqueValidator plugin to userSchema.
@@ -64,4 +70,8 @@ module.exports.getUsers = function(params, callback, limit) {
 
 module.exports.addUser = function(user, callback) {
   Users.create(user, callback);
+};
+
+module.exports.updateUser = (conditions, update, options, callback) => {
+  Users.findOneAndUpdate(conditions, update, options, callback);
 };
