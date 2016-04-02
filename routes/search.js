@@ -6,6 +6,7 @@ const TokenHelpers  = require('../utility/token-helpers');
 const Nutrition     = require('../models/nutrition.js');
 const Exercise      = require('../models/exercises.js');
 const Users         = require('../models/users');
+const Trackables    = require('../models/trackables');
 require('../config/passport')(passport);
 
 // GET
@@ -31,6 +32,19 @@ router.get('/exercise', passport.authenticate('jwt', { session: false}), (req, r
       }
       console.log(exercises.length);
       res.json(exercises);  
+    }, 10);
+  });
+});
+
+// GET
+router.get('/trackable', passport.authenticate('jwt', { session: false}), (req, res) => {
+  TokenHelpers.verifyToken(req, res, (req, res) => {    
+    Trackables.getTrackables({"name": {$regex: req.query.q, $options: 'i'}}, (err, trackables) => {      
+      if(err) {
+        console.log(err);
+      }
+      console.log(trackables.length);
+      res.json(trackables);  
     }, 10);
   });
 });

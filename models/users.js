@@ -21,6 +21,15 @@ var userSchema = mongoose.Schema({
   nutrition: [],
   trackableItems: [{
     name: {},
+    image: {},
+    progress: {
+      type: Number,
+      default: 0
+    },
+    goal: {
+      type: Number,
+      default: 0
+    },
     history: []
   }]
 });
